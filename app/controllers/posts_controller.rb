@@ -2,7 +2,11 @@ class PostsController < ApplicationController
   before_action :authenticate_user!,except: [:index, :show]
 
   def index
-    @posts = Post.all.order('created_at DESC')
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag])
+    else
+      @posts = Post.all.order('created_at DESC')
+      end
   end
 
   def new
@@ -24,13 +28,17 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @post = current_user.posts.where(id: params[:id]).first
+
+    if !@post.present?
+      redirect_to root_path
+    end
   end
 
   def update
     @post = Post.find(params[:id])
 
-    if @post.update(params[:post].permit(:title, :body))
+    if @post.update(post_params)
       redirect_to @post
     else
       render 'edit'
@@ -46,6 +54,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :tag_list)
   end
 end

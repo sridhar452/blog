@@ -1,14 +1,25 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Wikimedia logo" viewBox="-599 -599 1198 1198" width="1024" height="1024">
-<defs>
-  <clipPath id="mask">
-    <path d="M 47.5,-87.5 v 425 h -95 v -425 l -552,-552 v 1250 h 1199 v -1250 z"/>
-  </clipPath>
-</defs>
-<g clip-path="url(#mask)">
-  <circle id="green parts" fill="#396" r="336.5"/>
-  <circle id="blue arc" fill="none" stroke="#069" r="480.25" stroke-width="135.5"/>
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="102px" height="98px" viewBox="0 0 102 98" enable-background="new 0 0 102 98" xml:space="preserve">
+<g id="ruby">
+	<g>
+		<polygon fill="#E40A0A" points="51,36.182 25.752,36.182 51,86.289 76.248,36.182 		"/>
+		<polygon fill="#F63C3C" points="0.116,36.182 51,86.289 25.752,36.182 		"/>
+		<polygon fill="#F63C3C" points="76.248,36.182 51,86.289 101.884,36.182 		"/>
+		<polygon opacity="0.2" fill="#201600" enable-background="new    " points="76.249,61.236 25.365,61.236 25.365,61.236 
+			50.807,85.706 		"/>
+		<polygon opacity="0.1" fill="#EFEFEF" enable-background="new    " points="51,36.182 0.116,36.182 0.116,36.182 25.558,60.653 		
+			"/>
+		<polygon opacity="0.1" fill="#EFEFEF" enable-background="new    " points="101.689,36.182 50.806,36.182 50.806,36.182 
+			76.248,60.653 		"/>
+		<polygon fill="#E40A0A" points="0.116,36.182 51,36.182 51,36.182 25.558,11.711 		"/>
+		<polygon fill="#E40A0A" points="50.223,36.182 101.107,36.182 101.107,36.182 75.665,11.711 		"/>
+		<polygon fill="#EC211D" points="75.665,11.711 24.782,11.711 24.781,11.711 50.223,36.182 		"/>
+		<polygon fill="#F63C3C" points="24.782,36.181 75.666,36.181 75.666,36.181 50.224,11.711 		"/>
+		<polygon opacity="0.1" fill="#EFEFEF" enable-background="new    " points="75.665,11.711 24.782,11.711 24.781,11.711 
+			50.223,36.182 		"/>
+	</g>
 </g>
-<circle fill="#900" cy="-379.5" r="184.5" id="red circle"/>
 </svg>

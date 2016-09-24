@@ -1,57 +1,56 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Blog</title>
-    <%= csrf_meta_tags %>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= csrf_meta_tags %>
+</head>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<body>
+<div id="sidebar">
+  <div id="logo">
+    <%= link_to root_path do %>
+    <%= image_tag "logo.svg" %>
+    <% end %>
+  </div>
+  <ul>
+    <li class="category">Website</li>
+    <li><%= link_to "Blog", root_path %></li>
+    <li><%= link_to "About", about_path %></li>
+  </ul>
 
-  <body>
-    <div id="sidebar">
-      <div id="logo">
-        <%= link_to root_path do %>
-            <% end %>
-      </div>
-      <ul>
-        <li class="category">Website</li>
-        <li><%= link_to "Blog",root_path %></li>
-        <li><%= link_to "About", about_path %></li>
-      </ul>
-
-      <% if !user_signed_in? %>
+  <% if !user_signed_in? %>
       <p class="sign_in">Admin Login</p>
-          <% end %>
-    </div>
+  <% end %>
+</div>
 
-    <div id="main_content">
-      <div id="header">
-        <% if current_page?(root_path) %>
+<div id="main_content">
+  <div id="header">
+    <% if current_page?(root_path) %>
         <p>All Posts</p>
-            <% elsif current_page?(about_path) %>
-            <p>About</p>
-            <% else %>
-            <%= link_to "Back to All Posts",root_path %>
-            <% end %>
+    <% elsif current_page?(about_path) %>
+        <p>About</p>
+    <% else %>
+       <button class="button"> <%= link_to "Back to All Posts", root_path %> </button>
+    <% end %>
 
-        <div class="buttons">
-          <%= link_to "New Post", new_post_path %> |
-          <%= link_to "Sign Up", new_user_registration_path %> |
-          <%= link_to "Sign In", new_user_session_path %> |
-
-
-        <% if user_signed_in? %>
-            <%= link_to "Log Out", destroy_user_session_path,method: :delete %>
-            <% end %>
-        </div>
-      </div>
-      <% flash.each do |name,msg| %>
-      <%= content_tag(:div, msg, class: "alert") %>
-          <% end %>
-
-      <%= yield %>
+    <div class="buttons">
+      <button class="button"><%= link_to "New Post", new_post_path %></button>
+      <% if user_signed_in? %>
+          <button class="button"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></button>
+      <% else %>
+          <button class="button"><%= link_to "Sign Up", new_user_registration_path %></button>
+          <button class="button"><%= link_to "Sign In", new_user_session_path %></button>
+      <% end %>
     </div>
-  </body>
+  </div>
+  <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, class: "alert") %>
+  <% end %>
+
+  <%= yield %>
+</div>
+</body>
 </html>
